@@ -4,10 +4,10 @@ PortSystem          1.0
 PortGroup           cmake 1.0
 PortGroup           github 1.0
 
-github.setup        mossmann hackrf b3c56f58e6f325b46922b2b50ee080ce46fbc430
-version             20170123
-checksums           rmd160 55607ed8a03a04eaace029cbdea49540e0f485d4 \
-                    sha256 25d4e4cbf8720cbd156d9f16347bdd9a3e36707df72914a41fc00eff5739a88a
+github.setup        mossmann hackrf c4a820ef34d064c351d6e35348bb427cc9dbb12d
+version             20170131
+checksums           rmd160 75d31e605648ab9f31f6030db410dd4cee22b7a4 \
+                    sha256 c72d1cb1e6b01566d55f7d24564256b36adf1eea3cae5aee22351d0960c54e9d
 
 maintainers         michaelld openmaintainer
 

@@ -92,10 +92,8 @@ post-destroot {
     # Install the tutorial files
     xinstall -d -m 755 ${destroot}${prefix}/share/doc/OGRE/Tutorials
     
-    eval xinstall -m 644 [glob ${worksrcpath}/Tutorials/*] \
+    xinstall -m 644 {*}[glob ${worksrcpath}/Tutorials/*] \
         ${destroot}${prefix}/share/doc/OGRE/Tutorials
 }
 
-livecheck.type      regex
-livecheck.url       ${homepage}download/source
-livecheck.regex     {>OGRE ([0-9.]+) Source}
+livecheck.regex     ogre_src_v(\\d+(?:-\\d+)*).tar.bz2

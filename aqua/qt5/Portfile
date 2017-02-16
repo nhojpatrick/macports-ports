@@ -7,7 +7,9 @@ name                qt5
 categories          aqua
 platforms           macosx
 maintainers         mcalhoun openmaintainer
-license             {LGPL-2.1 LGPL-3 GPL-3}
+
+# for OpenSSLException, see source and header files in src/network/ssl of qtbase
+license             {LGPL-2.1 LGPL-3 GPL-3 OpenSSLException}
 
 homepage            http://qt.io
 
@@ -1132,7 +1134,7 @@ foreach {module module_info} [array get modules] {
 
             # special case
             if { ${module} eq "qtmultimedia" } {
-                if { [vercmp ${os.version} 12] < 0} {
+                if { ${os.major} < 12 } {
                     # see https://trac.macports.org/ticket/52922
                     patchfiles-append patch-firstObject.diff
                 }

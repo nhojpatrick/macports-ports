@@ -3,7 +3,7 @@
 PortSystem          1.0
 
 name                youtube-dl
-version             2017.02.24
+version             2017.02.27
 categories          net
 platforms           darwin
 maintainers         ryandesign openmaintainer
@@ -17,8 +17,8 @@ long_description    ${name} is a small ${description}.
 homepage            http://rg3.github.com/youtube-dl/
 master_sites        http://youtube-dl.org/downloads/${version}
 
-checksums           rmd160  876bffe312b7146a3461698abfb50c7cfd7e6de6 \
-                    sha256  591f8e8de95f1da39fc153631333801555ac700f85add65d48aa616e0da83003
+checksums           rmd160  a2d14f7719bf91e2841b86d3b36fe880061efc94 \
+                    sha256  f3ea994cb5406786905c85535995254526a36bb148be804c566af0de57c8995d
 
 depends_build       bin:zip:zip
 

@@ -1095,7 +1095,9 @@ foreach {module module_info} [array get modules] {
                 #    requires qtdoc depend on all the documentation modules
                 foreach {module_doc module_doc_info} [array get modules] {
                     if { [lsearch -exact [lindex ${module_doc_info} 7] "~docs"] == -1 } {
-                        depends_lib-append port:${name}-${module_doc}-docs
+                        if { ${os.major} >= 13 || (${module_doc} ne "qtwebengine" && ${module_doc} ne "qtwebview") } {
+                            depends_lib-append port:${name}-${module_doc}-docs
+                        }
                     }
                 }
             }
@@ -1293,6 +1295,16 @@ foreach {module module_info} [array get modules] {
                     ln -s ${qt_bins_dir}/qhelpgenerator ${worksrcpath}/bin/
                 }
             } elseif { ${module} eq "qtwebengine" } {
+                # see http://doc.qt.io/qt-5/qtwebengine-platform-notes.html
+                PortGroup           xcodeversion 1.0
+                minimum_xcodeversions   {13 5.1}
+                if { ${os.major} < 13 } {
+                    pre-fetch {
+                        ui_error "${subport} requires OS X 10.9 or later"
+                        return -code error "incompatible OS version"
+                    }
+                }
+
                 depends_build-append \
                     port:python27 \
                     port:${name}-qtwebchannel

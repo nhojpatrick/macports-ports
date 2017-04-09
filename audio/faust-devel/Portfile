@@ -3,11 +3,11 @@
 PortSystem              1.0
 PortGroup               github 1.0
 
-github.setup            grame-cncm faust 09e9836eb7398c9af327619c0ca0279c9f0d75ca
-version                 0.9.96-20170313
+github.setup            grame-cncm faust 10523e3c2f16444e188e4feb9e2e8399f6a39838
+version                 0.9.96-20170331
 
-checksums               rmd160  9246cae79dadfeb7f2d679e1507f9f45e9a0ae88 \
-                        sha256  401e99714545c4f40550d72cffe6d2cf0939d0db88527bdc4aaf665f7b845cfb
+checksums               rmd160  a257e307d38e3957f0b53b5b761769d7656d25cc \
+                        sha256  974326434347c0c0a39b2516b392ca0e699b5ac84ac875ae0e6feeafd1a63989
 
 name                    faust-devel
 conflicts               faust faust2-devel

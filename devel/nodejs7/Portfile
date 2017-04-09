@@ -5,6 +5,7 @@ PortGroup               compiler_blacklist_versions 1.0
 
 name                    nodejs7
 version                 7.7.4
+revision                1
 
 categories              devel net
 platforms               darwin
@@ -18,7 +19,7 @@ long_description        Node's goal is to provide an easy way to build scalable 
                         Machine or Python's Twisted. Node takes the event model a bit further-it \
                         presents the event loop as a language construct instead of as a library.
 
-conflicts               nodejs4 nodejs5 nodejs6
+conflicts               nodejs4 nodejs6
 
 homepage                http://nodejs.org/
 master_sites            ${homepage}dist/v${version}
@@ -66,7 +67,7 @@ post-patch {
 }
 
 configure.args-append   --without-npm
-configure.args-append   --with-intl=small-icu
+configure.args-append   --with-intl=system-icu
 configure.args-append   --without-inspector
 configure.args-append   --shared-openssl
 configure.args-append   --shared-openssl-includes=${prefix}/include/openssl
